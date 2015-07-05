@@ -8,7 +8,4 @@ after_test:
 # need to override travis 'install' since it will try gpg sign and fail.
 install: mvn clean compile -DmemoryInMB=2000 -Dcores=2 -DtimeInMinutesPerClass=3 evosuite:generate evosuite:export evosuite:prepare test
 
-branches:
-  except:
-      - mvn-repo
 
