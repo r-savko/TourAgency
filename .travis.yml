@@ -1,5 +1,7 @@
 language: java
 
+sudo: false
+
 export: CODECOV_TOKEN=dd571bfd-9127-426d-910e-576a3f8c8d61
 
 after_test:
