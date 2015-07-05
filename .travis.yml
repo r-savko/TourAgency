@@ -2,12 +2,12 @@ language: java
 
 sudo: false
 
-export: CODECOV_TOKEN=dd571bfd-9127-426d-910e-576a3f8c8d61
-
-after_test:
-  - bash <(curl -s https://codecov.io/bash)
+export: CODECOV_TOKEN=e57a372d-aa5f-4cd1-9fb4-38059abc7249
 
 # need to override travis 'install' since it will try gpg sign and fail.
-install: mvn clean compile -DmemoryInMB=2000 -Dcores=2 -DtimeInMinutesPerClass=3 evosuite:generate evosuite:export evosuite:prepare test
+install: mvn clean package -DmemoryInMB=2000 -Dcores=2 -DtimeInMinutesPerClass=3 evosuite:generate evosuite:export evosuite:prepare test
 
-
+after_succes:
+  - bash <(curl -s https://codecov.io/bash)
+after_test:
+  - bash <(curl -s https://codecov.io/bash)
