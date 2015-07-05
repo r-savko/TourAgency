@@ -7,7 +7,7 @@ export: CODECOV_TOKEN=e57a372d-aa5f-4cd1-9fb4-38059abc7249
 # need to override travis 'install' since it will try gpg sign and fail.
 install: mvn clean package -DmemoryInMB=2000 -Dcores=2 -DtimeInMinutesPerClass=3 evosuite:generate evosuite:export evosuite:prepare test
 
-after_succes:
+after_success:
   - bash <(curl -s https://codecov.io/bash)
-after_test:
+after_tests:
   - bash <(curl -s https://codecov.io/bash)
